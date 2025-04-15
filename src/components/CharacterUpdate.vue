@@ -107,7 +107,7 @@ const updateCharacter = async () => {
     if (updated && Object.keys(updated).length > 0) {
       alert(`Character "${updated.name}" updated!`);
       await refetch();
-      resetForm(); // clear form
+      resetForm(); 
     } else {
       alert('Character not found. Please check the name and try again.');
       resetForm();

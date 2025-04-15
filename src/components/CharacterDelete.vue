@@ -29,13 +29,13 @@ import { DELETE_CHARACTER, GET_ALL_CHARACTERS } from '../graphql/characters';
 
 const name = ref('');
 
-// Mutation for deleting character
+
 const { mutate } = useMutation(DELETE_CHARACTER);
 
-// Query to fetch characters and enable refetching
+
 const { refetch } = useQuery(GET_ALL_CHARACTERS);
 
-// Delete character method
+
 const deleteCharacter = async () => {
   if (!name.value.trim()) {
     alert('Please enter a character name to delete.');
@@ -48,8 +48,8 @@ const deleteCharacter = async () => {
 
     if (deleted && deleted.nodesDeleted > 0) {
       alert(`Character "${name.value}" deleted!`);
-      await refetch(); // Refresh the character list
-      name.value = ''; // Clear the input field after successful deletion
+      await refetch(); 
+      name.value = ''; 
     } else {
       alert('Character not found or already deleted. Please check the name and try again.');
     }

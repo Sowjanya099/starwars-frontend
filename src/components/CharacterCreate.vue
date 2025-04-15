@@ -51,7 +51,7 @@
         </b-col>
       </b-row>
 
-      <!-- Centering the button without stretching it -->
+      
       <b-row class="d-flex justify-content-center">
         <b-col class="text-center">
           <b-button type="submit" variant="success" class="btn-sm">

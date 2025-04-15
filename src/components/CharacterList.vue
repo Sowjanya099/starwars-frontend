@@ -1,18 +1,18 @@
 <template>
   <div>
     <h2>All Characters</h2>
-    
-    <!-- Loading state -->
+
+
     <div v-if="loading">
       <p>Loading characters...</p>
     </div>
 
-    <!-- Error state -->
+
     <div v-else-if="error">
       <p class="text-danger">Error: {{ error.message }}</p>
     </div>
 
-    <!-- Characters table -->
+
     <table v-else class="table table-bordered">
       <thead>
         <tr>
@@ -35,14 +35,14 @@
 </template>
 
 <script setup>
-import { computed } from 'vue'; 
+import { computed } from 'vue';
 import { useQuery } from '@vue/apollo-composable';
 import { GET_ALL_CHARACTERS } from '../graphql/characters.js';
 
-// Query to fetch all characters
+
 const { result, loading, error } = useQuery(GET_ALL_CHARACTERS);
 
-// Compute characters from the result
+
 const characters = computed(() => result.value?.characters || []);
 </script>
 
@@ -56,7 +56,8 @@ const characters = computed(() => result.value?.characters || []);
   margin-top: 1rem;
 }
 
-th, td {
+th,
+td {
   text-align: left;
   padding: 8px;
 }
